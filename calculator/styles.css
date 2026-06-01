@@ -1,0 +1,287 @@
+:root {
+  color-scheme: dark;
+  background: #151515;
+  color: #f0f0f0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: radial-gradient(circle at top, #2a2a2a 0%, #111 65%);
+}
+
+.calculator-shell {
+  width: min(100%, 760px);
+  background: rgba(30, 30, 30, 0.95);
+  border: 1px solid #333;
+  border-radius: 18px;
+  padding: 22px;
+  display: grid;
+  gap: 18px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr minmax(140px, 180px);
+  gap: 12px;
+  align-items: end;
+}
+
+.slider-group {
+  display: grid;
+  gap: 8px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.action-buttons button {
+  width: 100%;
+}
+
+.slider-group label {
+  font-size: 0.92rem;
+  color: #bbb;
+}
+
+.slider-group input[type="range"] {
+  width: 100%;
+}
+
+.slider-group span {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+button {
+  appearance: none;
+  border: 1px solid #555;
+  background: #222;
+  color: #f2f2f2;
+  border-radius: 6px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+
+.calc-button {
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  min-width: 0;
+}
+
+button:hover,
+button:focus-visible {
+  transform: translateY(-1px);
+  border-color: #888;
+  background: #2d2d2d;
+}
+
+button:disabled,
+button.disabled {
+  background: #393939;
+  border-color: #444;
+  color: #7d7d7d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+button.primary:disabled,
+button.primary.disabled,
+button.secondary:disabled,
+button.secondary.disabled {
+  background: #393939;
+  border-color: #444;
+  color: #7d7d7d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+button.primary {
+  background: #286ea0;
+  border-color: #3f80b4;
+  color: #f7fbff;
+}
+
+button.primary:hover:not(:disabled),
+button.primary:focus-visible:not(:disabled) {
+  background: #3a7eb3;
+}
+
+button.secondary:not(:disabled) {
+  background: #286ea0;
+  border-color: #3f80b4;
+  color: #f7fbff;
+}
+
+button.secondary:hover:not(:disabled),
+button.secondary:focus-visible:not(:disabled) {
+  background: #3a7eb3;
+}
+
+.display-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.result-box {
+  display: grid;
+  width: 100%;
+  gap: 10px;
+}
+
+.result-box label {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.result-box input {
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid #444;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: right;
+}
+
+.task-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+}
+
+.task-label,
+.input-label {
+  background: #1d1d1d;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 14px;
+  min-height: 80px;
+}
+
+.task-label strong,
+.input-label strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #bbb;
+  font-size: 0.88rem;
+}
+
+.task-label div,
+.input-label div {
+  min-height: 1.4em;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  color: #fff;
+  word-break: break-word;
+}
+
+.button-grid {
+  display: grid;
+  width: 100%;
+  justify-items: start;
+  align-items: start;
+}
+
+.collapse-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.collapse-toggle {
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  color: #e3e3e3;
+  background: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.collapse-toggle::after {
+  content: "+";
+  float: right;
+  transition: transform 0.2s ease;
+}
+
+.collapse-toggle.expanded::after {
+  content: "−";
+}
+
+.collapse-section {
+  display: none;
+  background: #111;
+  border: 1px solid #272727;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.collapse-section.expanded {
+  display: block;
+}
+
+.section-header {
+  margin-bottom: 10px;
+  color: #bbb;
+  font-size: 0.92rem;
+}
+
+.counter-display {
+  font-size: 1.2rem;
+  color: #fff;
+  min-height: 1.6em;
+}
+
+.log-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.log-panel > div {
+  background: #111;
+  border: 1px solid #272727;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.log-panel strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #bbb;
+}
+
+.log-panel pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #e3e3e3;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 640px) {
+  .controls,
+  .task-info {
+    grid-template-columns: 1fr;
+  }
+}

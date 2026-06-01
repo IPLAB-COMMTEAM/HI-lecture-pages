@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitts Experiment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="canvas-wrapper">
+      <canvas id="fittsCanvas" width="1200" height="800"></canvas>
+      <button id="startButton" class="control-button">start</button>
+      <div class="status-panel">
+        <p id="statusText">Ready</p>
+        <p id="infoText"></p>
+      </div>
+    </div>
+    <div class="control-panel">
+      <label>
+        Distance
+        <input id="distanceInput" type="number" value="128" min="10">
+      </label>
+      <label>
+        Width
+        <input id="widthInput" type="number" value="64" min="4">
+      </label>
+      <label>
+        #Circles
+        <input id="circlesInput" type="number" value="13" min="3">
+      </label>
+      <button id="setButton" class="control-button">set</button>
+      <button id="downloadButton" class="control-button">Download CSV</button>
+    </div>
+    <textarea id="logArea" readonly></textarea>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

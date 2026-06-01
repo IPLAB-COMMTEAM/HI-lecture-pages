@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="calculator-shell">
+    <section class="controls">
+      <div class="slider-group">
+        <label for="sizeSlider">SIZE</label>
+        <input id="sizeSlider" type="range" min="30" max="120" value="50" />
+        <span id="sizeValue">50</span>
+      </div>
+      <div class="slider-group">
+        <label for="distanceSlider">DISTANCE</label>
+        <input id="distanceSlider" type="range" min="30" max="120" value="100" />
+        <span id="distanceValue">100</span>
+      </div>
+      <div class="action-buttons">
+        <button id="startButton" class="primary" type="button">start</button>
+        <button id="downloadButton" class="secondary" type="button" disabled>Download CSV</button>
+      </div>
+    </section>
+
+    <section class="display-panel">
+      <div class="result-box">
+        <label for="resultInput">result</label>
+        <input id="resultInput" type="text" value="0" readonly />
+      </div>
+      <div class="task-info">
+        <div class="task-label">
+          <strong>Text to be input</strong>
+          <div id="taskText">......</div>
+        </div>
+        <div class="input-label">
+          <strong>Input text</strong>
+          <div id="inputText"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="button-grid" id="buttonGrid"></section>
+
+    <section class="collapse-panel" id="debugPanel">
+      <button class="collapse-toggle" type="button" data-target="timeCounterPanel">Time counter</button>
+      <div class="collapse-section" id="timeCounterPanel">
+        <div class="section-header">Next button latency</div>
+        <div class="counter-display" id="timeCounter">0 ms</div>
+      </div>
+      <button class="collapse-toggle" type="button" data-target="buttonInfoPanel">Button info</button>
+      <div class="collapse-section" id="buttonInfoPanel">
+        <pre id="buttonInfo">buttonsize,50\nbuttondistance,100\nSTART,240,120</pre>
+      </div>
+      <button class="collapse-toggle" type="button" data-target="logsPanel">Logs</button>
+      <div class="collapse-section" id="logsPanel">
+        <pre id="logs"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
