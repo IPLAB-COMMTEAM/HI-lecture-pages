@@ -99,6 +99,11 @@ function writeData(line) {
   dataLines.push(line);
 }
 
+function setButtonEnabled(button, enabled) {
+  button.disabled = !enabled;
+  button.classList.toggle('disabled', !enabled);
+}
+
 function startExp() {
   dataLines = [];
   writeData(`try,time,mouseMoveDistance,miss`);
@@ -107,6 +112,8 @@ function startExp() {
   missCount = 0;
   activeOrder = 0;
   statusText.textContent = `Running (${setFileName()})`;
+  setButtonEnabled(downloadButton, false);
+  setButtonEnabled(startButton, false);
   log('Experiment started');
 }
 
@@ -114,6 +121,8 @@ function stopExp() {
   running = false;
   statusText.textContent = `Stopped. miss: ${missCount}`;
   log(`Experiment finished. missCount=${missCount}`);
+  setButtonEnabled(downloadButton, true);
+  setButtonEnabled(startButton, true);
 }
 
 function isPointInTarget(target, x, y) {
@@ -221,6 +230,9 @@ canvas.addEventListener('mousedown', handleCanvasClick);
 startButton.addEventListener('click', startExp);
 setButton.addEventListener('click', applySettings);
 downloadButton.addEventListener('click', downloadCsv);
+
+// initial button states
+setButtonEnabled(downloadButton, false);
 
 setTarget();
 updateInfoText();

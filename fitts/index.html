@@ -10,7 +10,10 @@
   <div class="app-shell">
     <div class="canvas-wrapper">
       <canvas id="fittsCanvas" width="1200" height="800"></canvas>
-      <button id="startButton" class="control-button">start</button>
+      <div class="canvas-actions">
+        <button id="startButton" class="control-button primary">start</button>
+        <button id="downloadButton" class="control-button secondary" disabled>Download CSV</button>
+      </div>
       <div class="status-panel">
         <p id="statusText">Ready</p>
         <p id="infoText"></p>
@@ -30,7 +33,6 @@
         <input id="circlesInput" type="number" value="13" min="3">
       </label>
       <button id="setButton" class="control-button">set</button>
-      <button id="downloadButton" class="control-button">Download CSV</button>
     </div>
     <textarea id="logArea" readonly></textarea>
   </div>

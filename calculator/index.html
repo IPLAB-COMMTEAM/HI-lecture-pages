@@ -19,10 +19,7 @@
         <input id="distanceSlider" type="range" min="30" max="120" value="100" />
         <span id="distanceValue">100</span>
       </div>
-      <div class="action-buttons">
-        <button id="startButton" class="primary" type="button">start</button>
-        <button id="downloadButton" class="secondary" type="button" disabled>Download CSV</button>
-      </div>
+      <!-- action buttons moved to keypad area -->
     </section>
 
     <section class="display-panel">
@@ -42,7 +39,13 @@
       </div>
     </section>
 
-    <section class="button-grid" id="buttonGrid"></section>
+    <section class="button-grid" id="buttonGrid">
+      <div id="calcKeys" class="calc-keys"></div>
+      <div class="keypad-actions action-buttons">
+        <button id="startButton" class="primary" type="button">start</button>
+        <button id="downloadButton" class="secondary" type="button" disabled>Download CSV</button>
+      </div>
+    </section>
 
     <section class="collapse-panel" id="debugPanel">
       <button class="collapse-toggle" type="button" data-target="timeCounterPanel">Time counter</button>

@@ -17,10 +17,13 @@ body {
   justify-content: center;
   padding: 20px;
   background: radial-gradient(circle at top, #2a2a2a 0%, #111 65%);
+  overflow-x: auto;
 }
 
 .calculator-shell {
-  width: min(100%, 760px);
+  width: 760px;
+  /* prevent flexbox from shrinking the shell on narrow viewports */
+  flex: 0 0 760px;
   background: rgba(30, 30, 30, 0.95);
   border: 1px solid #333;
   border-radius: 18px;
@@ -31,7 +34,8 @@ body {
 
 .controls {
   display: grid;
-  grid-template-columns: 1fr 1fr minmax(140px, 180px);
+  /* two equal columns: each slider will occupy half the controls width */
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
   align-items: end;
 }
@@ -201,6 +205,24 @@ button.secondary:focus-visible:not(:disabled) {
   width: 100%;
   justify-items: start;
   align-items: start;
+  position: relative;
+}
+
+.calc-keys {
+  display: grid;
+  width: 100%;
+  justify-items: start;
+  align-items: start;
+}
+
+.keypad-actions {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 120px;
 }
 
 .collapse-panel {

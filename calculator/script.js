@@ -6,6 +6,7 @@ const labels = [
 ];
 
 const buttonGrid = document.getElementById("buttonGrid");
+const calcKeys = document.getElementById("calcKeys");
 const resultInput = document.getElementById("resultInput");
 const taskText = document.getElementById("taskText");
 const inputText = document.getElementById("inputText");
@@ -41,11 +42,11 @@ let buttonTimerInterval = null;
 function formatButtonGrid() {
   const size = Number(sizeSlider.value);
   const distance = Number(distanceSlider.value);
-  buttonGrid.style.gridTemplateColumns = `repeat(4, ${size}px)`;
-  buttonGrid.style.gridAutoRows = `${size}px`;
-  buttonGrid.style.gap = `${Math.max(0, distance - size)}px`;
+  calcKeys.style.gridTemplateColumns = `repeat(4, ${size}px)`;
+  calcKeys.style.gridAutoRows = `${size}px`;
+  calcKeys.style.gap = `${Math.max(0, distance - size)}px`;
 
-  const buttons = buttonGrid.querySelectorAll(".calc-button");
+  const buttons = calcKeys.querySelectorAll(".calc-button");
   buttons.forEach(button => {
     button.style.width = `${size}px`;
     button.style.height = `${size}px`;
@@ -273,7 +274,7 @@ function handleButton(label) {
 }
 
 function createButtons() {
-  buttonGrid.innerHTML = "";
+  calcKeys.innerHTML = "";
   labels.forEach(row => {
     row.forEach(label => {
       const button = document.createElement("button");
@@ -297,7 +298,7 @@ function createButtons() {
           startButtonTimer();
         }
       });
-      buttonGrid.appendChild(button);
+      calcKeys.appendChild(button);
     });
   });
   formatButtonGrid();

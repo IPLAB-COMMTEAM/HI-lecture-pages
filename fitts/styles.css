@@ -69,11 +69,44 @@ body {
 .control-button:hover {
   background: #444;
 }
-#startButton {
+
+.canvas-actions {
   position: absolute;
   right: 300px;
   bottom: 20px;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+
+button.primary {
+  background: #286ea0;
+  border-color: #3f80b4;
+  color: #f7fbff;
+}
+
+button.primary:hover:not(:disabled) {
+  background: #3a7eb3;
+}
+
+button.secondary:not(:disabled) {
+  background: #286ea0;
+  border-color: #3f80b4;
+  color: #f7fbff;
+}
+
+button.secondary:hover:not(:disabled) {
+  background: #3a7eb3;
+}
+
+.control-button.disabled,
+button:disabled {
+  background: #393939;
+  border-color: #444;
+  color: #7d7d7d;
+  cursor: not-allowed;
 }
 .status-panel {
   position: absolute;
