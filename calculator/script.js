@@ -147,13 +147,15 @@ function downloadCSV() {
 
   const pad = (value) => String(value).padStart(2, "0");
   const timestamp = startTimestamp || new Date();
+  const year = timestamp.getFullYear();
   const month = pad(timestamp.getMonth() + 1);
   const day = pad(timestamp.getDate());
   const hour = pad(timestamp.getHours());
   const minute = pad(timestamp.getMinutes());
+  const second = pad(timestamp.getSeconds());
   const size = Number(sizeSlider.value);
   const distance = Number(distanceSlider.value);
-  link.download = `w${size}d${distance}_${month}${day}${hour}${minute}.csv`;
+  link.download = `calc_w${size}d${distance}_${year}${month}${day}_${hour}${minute}${second}.csv`;
 
   document.body.appendChild(link);
   link.click();

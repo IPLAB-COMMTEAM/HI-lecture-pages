@@ -84,7 +84,15 @@ function updateInfoText() {
 }
 
 function setFileName() {
-  return `d${d}w${w}.csv`;
+  const pad = (value) => String(value).padStart(2, "0");
+  const timestamp = new Date();
+  const year = timestamp.getFullYear();
+  const month = pad(timestamp.getMonth() + 1);
+  const day = pad(timestamp.getDate());
+  const hour = pad(timestamp.getHours());
+  const minute = pad(timestamp.getMinutes());
+  const second = pad(timestamp.getSeconds());
+  return `fit_d${d}w${w}_${year}${month}${day}_${hour}${minute}${second}.csv`;
 }
 
 function writeData(line) {
@@ -93,7 +101,7 @@ function writeData(line) {
 
 function startExp() {
   dataLines = [];
-  writeData(`try,time,mouseMoveDistance,miss,${new Date().getHours()},${new Date().getMinutes()},${new Date().getSeconds()}`);
+  writeData(`try,time,mouseMoveDistance,miss`);
   running = true;
   t0 = performance.now();
   missCount = 0;
