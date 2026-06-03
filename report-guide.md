@@ -46,9 +46,9 @@ STARTボタンを押すと，実験が開始される．START を押した瞬間
 
 実験では，なるべく速く，選択ミスなく，ターゲットを選択するようにする．実験前にはある程度練習して慣れておくべきである．これは，計測されるデータの分散が慣れによってある程度小さくなることが期待されるからである．選択ミスをしても次のターゲットにそのまま進むので，間違った場合には，計測をやり直すこととする．(間違った場合のデータは，設定した条件とは異なる条件のデータになっていると考えられるため．)
 
-<div style="display: flex; flex-direction: column; align-items: center;">
+<div style="text-align: center;">
   <strong>表 1: タスクの条件設定</strong>
-  <table style="margin: 0 auto; margin-top: 10px;">
+  <table style="margin: 0 auto; display: table; margin-top: 10px; text-align: center;">
     <tr>
       <td>幅 (W)</td><td>40</td><td>90</td><td>120</td><td>40</td><td>90</td><td>120</td><td>40</td><td>90</td><td>120</td>
     </tr>
