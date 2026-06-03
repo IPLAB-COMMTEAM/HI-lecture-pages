@@ -317,15 +317,15 @@ function setupCollapseToggles() {
   });
 }
 
-sizeSlider.addEventListener("input", () => {
+function refreshKeypadLayout() {
   updateSliderLabels();
   formatButtonGrid();
-});
+  writeButtonInfo();
+}
 
-distanceSlider.addEventListener("input", () => {
-  updateSliderLabels();
-  formatButtonGrid();
-});
+sizeSlider.addEventListener("input", refreshKeypadLayout);
+
+distanceSlider.addEventListener("input", refreshKeypadLayout);
 
 startButton.addEventListener("click", () => {
   sessionStarted = true;
@@ -358,6 +358,7 @@ downloadButton.addEventListener("click", downloadCSV);
 
 window.addEventListener("load", () => {
   updateSliderLabels();
+  writeButtonInfo();
   resetCalculator();
   createButtons();
   setupCollapseToggles();
