@@ -20,8 +20,8 @@ window.MathJax = {
 ## 1 準備
 本演習で用いる実験用プログラムは，html, css, Javascriptを用いて実装され以下のURLで公開されている．
 
-*   演習2-1用: https://iplab-commteam.github.io/HI-lecture-pages/fitts
-*   演習2-2用: https://iplab-commteam.github.io/HI-lecture-pages/calculator
+*   演習2-1用: <https://iplab-commteam.github.io/HI-lecture-pages/fitts>
+*   演習2-2用: <https://iplab-commteam.github.io/HI-lecture-pages/calculator>
 
 各自、アクセスできるか授業時間内に確認すること．
 
@@ -46,7 +46,7 @@ STARTボタンを押すと，実験が開始される．START を押した瞬間
 
 実験では，なるべく速く，選択ミスなく，ターゲットを選択するようにする．実験前にはある程度練習して慣れておくべきである．これは，計測されるデータの分散が慣れによってある程度小さくなることが期待されるからである．選択ミスをしても次のターゲットにそのまま進むので，間違った場合には，計測をやり直すこととする．(間違った場合のデータは，設定した条件とは異なる条件のデータになっていると考えられるため．)
 
-<div style="text-align: center;">
+<div style="display: flex; flex-direction: column; align-items: center;">
   <strong>表 1: タスクの条件設定</strong>
   <table style="margin: 0 auto; margin-top: 10px;">
     <tr>
@@ -163,6 +163,7 @@ $$
     *   数字 → 演算子
     *   演算子 → 数字
     *   数字 → =
+    
     それぞれの場合について，各自の実験設定におけるキーの中心座標間距離の平均を計算する．例えば，START → 数字の場合，STARTボタンは 1箇所であるが，数字キーは 10箇所あるので，STARTボタンからそれぞれのキーまでの距離を計算して平均する．等確率で数字が出現するとすれば，多数回タスクを行った際の実移動距離の平均は，この計算で求めた平均値に近くなると期待できる．なお，各キーのサイズや中心座標等の情報は，UI下部の「Button Info」にて確認できる（デフォルトは折りたたまれているため開いて確認する）．また，実験実施後に書き出される csvファイル中にも同情報が出力される．
 2.  1で求めたボタン間の距離の平均値と実験で設定したボタンのサイズを使って Fittsの法則における IDを計算すれば，演習 2-1で求めた近似式にあてはめることができる．タスク内の各キーを押す時間を計算して合計することで入力予測時間を計算してみよう．
 
